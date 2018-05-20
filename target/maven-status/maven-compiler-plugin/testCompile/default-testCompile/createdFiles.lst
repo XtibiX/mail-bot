@@ -1,6 +1,0 @@
-com\fortytwotalents\events\ServiceConfig.class
-com\fortytwotalents\events\repository\internal\JpaEventRepositoryTests.class
-com\fortytwotalents\events\RepositoryConfig.class
-com\fortytwotalents\events\EventsConfig.class
-com\fortytwotalents\events\service\internal\StandardEventServiceTests.class
-com\fortytwotalents\events\AspectConfig.class
