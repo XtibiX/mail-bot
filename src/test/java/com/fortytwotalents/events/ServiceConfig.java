@@ -6,7 +6,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = { "com.fortytwotalents.events.service" })
+@ComponentScan(basePackages = { "no.normann.mail.service" })
 public class ServiceConfig {
 
 }

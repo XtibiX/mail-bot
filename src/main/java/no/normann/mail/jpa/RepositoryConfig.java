@@ -1,7 +1,4 @@
-package com.fortytwotalents.events;
-
-import javax.persistence.EntityManagerFactory;
-import javax.sql.DataSource;
+package no.normann.mail.jpa;
 
 import org.hibernate.dialect.H2Dialect;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -19,8 +16,11 @@ import org.springframework.orm.jpa.vendor.HibernateJpaDialect;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
+import javax.persistence.EntityManagerFactory;
+import javax.sql.DataSource;
+
 @Configuration
-@ComponentScan(basePackages = { "com.fortytwotalents.events.repository" })
+@ComponentScan(basePackages = { "no.normann.mail.repository" })
 public class RepositoryConfig {
 
 	@Bean
@@ -34,7 +34,7 @@ public class RepositoryConfig {
 		lcemfb.setDataSource(dataSource());
 		lcemfb.setJpaDialect(new HibernateJpaDialect());
 		lcemfb.setJpaVendorAdapter(jpaVendorAdapter());
-		lcemfb.setPackagesToScan("com.fortytwotalents.events.domain");
+		lcemfb.setPackagesToScan("no.normann.mail.domain");
 		lcemfb.afterPropertiesSet();
 		return lcemfb.getObject();
 	}

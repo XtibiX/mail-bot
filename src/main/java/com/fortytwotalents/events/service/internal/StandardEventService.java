@@ -16,7 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * Standard implementation of the {@link EventService} API.
- * 
+ *
  * @author Patrick Baumgartner
  * @since 1.0
  */
@@ -25,35 +25,33 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 public class StandardEventService implements EventService {
 
-	private final EventRepository repository;
+    private final EventRepository repository;
 
-	@Autowired
-	public StandardEventService(EventRepository eventRepository) {
-		this.repository = eventRepository;
-	}
+    @Autowired
+    public StandardEventService(EventRepository eventRepository) {
+        this.repository = eventRepository;
+    }
 
-	public Event findById(Long id) {
-		return repository.findById(id);
-	}
+    public Event findById(Long id) {
+        return repository.findById(id);
+    }
 
-	@ProfileExecution
-	public List<Event> findAllEvents() {
-		return repository.findAll();
-	}
+    @ProfileExecution
+    public List<Event> findAllEvents() {
+        return repository.findAll();
+    }
 
-	@Transactional(readOnly = false)
-	public Event save(final Event event) {
-		Assert.notNull(event, "event must not be null");
-		if (log.isDebugEnabled()) {
-			log.debug("Saving new event: {}", event);
-		}
+    @Transactional(readOnly = false)
+    public Event save(final Event event) {
+        Assert.notNull(event, "event must not be null");
+        log.debug("Saving new event: {}", event);
 
-		return repository.save(event);
-	}
+        return repository.save(event);
+    }
 
-	@Transactional(readOnly = false)
-	public void delete(Event event) {
-		repository.delete(event);
-	}
+    @Transactional(readOnly = false)
+    public void delete(Event event) {
+        repository.delete(event);
+    }
 
 }
